@@ -27,11 +27,21 @@ describe "Static pages" do
   end
 
   describe "About page" do
-    it "should have the content 'About'" do
-      visit '/static_pages/help'
+    it "should have the content 'About Us'" do
+      visit '/static_pages/about'
 #_       page.should have_content('Help')
-      expect(page).to have_content('Help')
+      expect(page).to have_content('About Us')
     end
   end
+
+  describe "Title check" do
+    it "should have the right title" do
+      visit '/static_pages/home'
+#_       page.should have_selector('title',  :text => "Ruby on Rails Tutorial Sample App | Home")
+#_       expect(page).to have_title("title",  text => "Ruby on Rails Tutorial Sample App | Home")
+      expect(page).to have_title "Ruby on Rails Tutorial Sample App | Home"
+    end
+  end
+
 
 end
