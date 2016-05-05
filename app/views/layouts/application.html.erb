@@ -8,11 +8,19 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <%= render 'layouts/shim' %>
+
   </head>
 
   <body>
-  
-    <%= yield %>
+<!--k   moved header tag content to app/views/layouts/_header.html.erb    --> 
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   
   </body>
 </html>
