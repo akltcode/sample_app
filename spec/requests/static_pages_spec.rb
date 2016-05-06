@@ -11,7 +11,8 @@ require 'rails_helper'
 describe "Static pages" do
   describe "Home page" do
     it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
+#_       visit '/static_pages/home'
+      visit   home_path
 #_       page.should have_content('Sample App')
       expect(page).to have_content('Sample App')
     end
@@ -20,23 +21,32 @@ describe "Static pages" do
 
   describe "Help page" do
     it "should have the content 'Help'" do
-      visit '/static_pages/help'
-#_       page.should have_content('Help')
+#_       visit '/static_pages/help'
+      visit   help_path
       expect(page).to have_content('Help')
     end
   end
 
   describe "About page" do
     it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-#_       page.should have_content('Help')
+#_       visit '/static_pages/about'
+      visit   about_path
       expect(page).to have_content('About Us')
+    end
+  end
+
+  describe "Contact page" do
+    it "should have the content 'Contact'" do
+#_       visit '/static_pages/contact'
+      visit   contact_path
+      expect(page).to have_content('Contact')
     end
   end
 
   describe "Title check" do
     it "should have the right title" do
-      visit '/static_pages/home'
+#_       visit '/static_pages/home'
+      visit  home_path
 #_       page.should have_selector('title',  :text => "Ruby on Rails Tutorial Sample App | Home")
 #_       expect(page).to have_title("title",  text => "Ruby on Rails Tutorial Sample App | Home")
       expect(page).to have_title "Ruby on Rails Tutorial Sample App | Home"
