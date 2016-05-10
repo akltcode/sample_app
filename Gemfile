@@ -5,11 +5,15 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'bootstrap-sass'
 #_ gem 'bootstrap-sass', '2.0.0'
+gem  'bcrypt-ruby'
 # Use sqlite3 as the database for Active Record
 #_ gem 'sqlite3'
+#
+#_ gem 'protected_attributes'
 group :development, :test do
   gem 'sqlite3'      #, '1.3.5'
   gem 'rspec-rails'  #, '2.9.0'
+  gem 'annotate'    
 end
 
 # Use SCSS for stylesheets
